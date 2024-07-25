@@ -11,7 +11,7 @@ As of now, the only OS tested is Ubuntu 22.04. For Windows or MacOS, it is possi
 First, you need to install the dependencies with the following command:
 
 ```bash
-sudo apt-get install libopencv-dev libeigen3-dev
+sudo apt-get install libeigen3-dev libopencv-dev libboost-all-dev python3-numpy
 ```
 
 To be more specific on the dependency version, there are listed below:

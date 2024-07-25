@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    # - name: Install latest OpenCV
+    #   steps: |
+    #     wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
+    #     wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
+    #     unzip opencv.zip
+    #     unzip opencv_contrib.zip
+    #     mkdir -p build && cd build
+    #     cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
+    #     make
+    #     make install      
+    - run: sudo apt-get install libeigen3-dev libopencv-dev libboost-all-dev python3-numpy
+    - run: pip install '.[test]'

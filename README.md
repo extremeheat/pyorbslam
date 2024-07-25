@@ -16,7 +16,7 @@ sudo apt-get install libopencv-dev libeigen3-dev libboost-all-dev python3-numpy
 
 To be more specific on the dependency version, there are listed below:
 
-* OpenCV >= 4.4
+* OpenCV >= 4.4 (steps for installing latest OpenCV can be seen [here](./.github/workflows/ci.yml))
 * Eigen3 >= 3.1.0
 
 Then clone the repo and install the package. Make sure that you have CMake and gcc update to date.
